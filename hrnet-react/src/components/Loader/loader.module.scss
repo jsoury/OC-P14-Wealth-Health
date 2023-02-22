@@ -1,0 +1,35 @@
+@use "@/assets/styles/libs/function" as function;
+$cd-bars: #15DEA5;
+$cd-bars-inv: #0E397F;
+$size: 1.5vh;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 5;
+
+.load {
+    width: $size*10;
+    height: $size*7.5;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    &__bar {
+        background-color: function.color(secondary);
+        height: 100%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
+        @for $i from 1 through 5 {
+            &#{$i} {
+                animation-delay: $anim-delay * $i;
+            }            
+        }
+    }
+}
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+        background-color: function.color(secondary);
+    }
+    100% {
+        transform: scaleY(1.0);
+        background-color: function.color(primary);
+    }
+}

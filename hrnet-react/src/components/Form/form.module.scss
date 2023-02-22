@@ -1,0 +1,169 @@
+@use "@/assets/styles/libs/function" as function;
+@use "@/assets/styles/libs/mixin" as mixin;
+$tranformLabel : -65px;
+
+.createEmployee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    &__title{
+        margin: 2rem 1rem !important;
+    }
+    &__row {
+        display: flex;
+        gap: 40px;
+        padding: 10px;
+        @include mixin.break-to(small){
+            flex-direction: column;            
+        }
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        min-width: 250px;         
+    }
+    &__label {
+        z-index: 1;
+        transform: translateY(-35px);
+        transition: all 0.3s;        
+    }
+    &__textarea{
+        position: absolute;
+        top: 20px;
+    }    
+    &__input {
+        border-width: 0 0 4px 0;
+        border-color: function.color(secondary);
+        background-color: transparent;
+        width: 100%;
+        z-index: 1;  
+
+        &:focus {
+            outline: none;
+            border-color: function.color(secondaryGrey);            
+            & + label:not(.form__textarea):not(.form__label){
+                transform: translateY($tranformLabel);
+            }             
+                     
+        }
+        &:focus-visible {
+            outline: none;
+            border-color: function.color(primary);
+             +label {
+                transform: translateY($tranformLabel);
+            }                       
+        }
+        &:not(:placeholder-shown) + label:not(.form__select) {
+            transform: translateY($tranformLabel);
+        }
+        
+        &::-webkit-input-placeholder {
+            color: #666;
+            opacity: 0;
+        }            
+        &:-moz-placeholder { /* Firefox 18- */
+            color: #666;
+            opacity: 0;
+        }            
+        &::-moz-placeholder {  /* Firefox 19+ */
+            color: #666;
+            opacity: 0;
+        }            
+        &:-ms-input-placeholder {
+            color: #666;
+            opacity: 0;
+        }   
+    }
+   
+            
+    &__error{
+        border-color: function.color(primaryComp)
+    }
+    
+    &__OptionSelect{
+        transform: translateY($tranformLabel)      
+    }
+    & option[value=null]{
+        display: none;
+    }
+    .textarea{
+        resize: vertical;
+        overflow: hidden;
+    }
+    .btn__submit{
+        margin: none;
+        float: right;
+    }
+
+    & input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 100px function.color(grey) inset;
+        box-shadow: 0 0 0 100px function.color(grey) inset;
+    }
+    &__mention{
+        text-align: justify;
+        margin: 0;
+        font-size: .9rem;
+    }     
+
+
+    @include mixin.break-to(small){
+       width: 90%;
+       font-size: 1rem;
+       &__input{
+        height: 40px;
+       }          
+    }
+    @include mixin.break-to(xsmall){
+        font-size: .8rem;          
+     }
+}
+.form__green{  
+    @extend .form; 
+    .form__input {
+        border-width: 0 0 4px 0;
+        border-color: function.color(white);
+        background-color: function.color(secondary);   
+
+    }
+    & input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 100px function.color(secondary) inset;
+        box-shadow: 0 0 0 100px function.color(secondary) inset;
+    }   
+}
+
+.message{
+    &__error{
+        color:function.color(primaryComp)
+    }
+}
+
+.group__button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include mixin.break-to(small){
+        flex-direction: column-reverse;         
+     }
+}
+
