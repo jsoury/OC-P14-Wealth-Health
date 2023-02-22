@@ -1,0 +1,70 @@
+@use "@/assets/styles/variables" as variable;
+@use "@/assets/styles/libs/function" as function;
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    margin: 1.5rem;
+    padding: 2rem 3rem; 
+    border-radius: 60px;    
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: function.color(white);    
+    cursor: pointer;
+    transition: all 500ms ease-out;
+    box-shadow: variable.$button-shadow;
+    &__block {
+        @extend .btn;
+        margin: 2.5rem auto;
+        padding: 2rem;
+        width: 100%;
+    }   
+}
+
+.primary{
+    @extend .btn;
+    background: variable.$background-button-hover-primary;
+    background-size: 1px 500px;
+    
+    &:hover{
+        background-position: 500px;
+        box-shadow: variable.$button-shadow-hover;
+    }        
+}
+
+.secondary{
+    @extend .btn;
+    background: variable.$background-button-hover-secondary;
+    background-size: 1px 200px;
+    &:hover{
+        background-position: 500px;
+        box-shadow: variable.$button-shadow-hover;
+    }
+}  
+
+.submit{
+    @extend .btn;
+    background: variable.$background-button-hover-secondary;
+    background-size: 1px 200px;
+    padding: 1rem 2rem;
+    border: none; 
+    &:hover{
+        background-position: 500px;
+        box-shadow: variable.$button-shadow-hover;
+    } 
+}
+
+.annule{
+    @extend .btn;
+    background: variable.$background-button-annule;
+    background-size: 1px 200px;
+    padding: 1rem 2rem;
+    border: none; 
+    &:hover{
+        background-position: 500px;
+        box-shadow: variable.$background-button-annule;
+    } 
+}
+

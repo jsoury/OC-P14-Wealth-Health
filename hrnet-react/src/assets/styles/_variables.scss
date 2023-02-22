@@ -1,0 +1,46 @@
+$breakpoints: (
+    "xsmall":515px,
+    "small": 767px,
+    "medium": 992px,
+    "large": 1200px,
+);
+
+$colors: (
+    primary: hsl(189,82%,30%),
+    primaryComp: hsl(9,82%,30%),
+    primaryGrey: hsl(0,0%,43%),
+    secondary: hsl(94,45%,50%),
+    secondaryComp: hsl(274,45%,50%),
+    secondaryGrey:hsl(0,0,65%),
+    grey:hsl(0,0%,96%),    
+    white: hsl(0, 0%, 100%)
+);
+
+// $background-location: tint(color(dark), 91.6);
+// $background-grey-light: tint(color(dark), 96.5);
+// $working-icon: tint(color(dark), 49.5);
+// $background-footer: tint(color(dark), 20.8);
+// $working-store: tint(color(primary), 85);
+//$background-button: linear-gradient(color(secondary),30%, color(primary));
+
+
+$font-title: ("Montserrat", sans-serif);
+$font-text: ("Roboto Slab", serif);
+
+$shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+$button-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+$button-shadow-hover: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+$background-button: linear-gradient(360deg, hsl(94,45%,50%) 30%, hsl(189,82%,30%));
+$background-button-hover-primary: linear-gradient(360deg,
+    hsl(189,82%,30%),50%,hsl(94,45%,50%)    
+);
+
+$background-button-hover-secondary: linear-gradient(360deg, hsl(94,45%,50%),50%, hsl(189,82%,30%));
+
+$background-button-annule : linear-gradient(360deg, hsl(274,45%,50%) ,50%, hsl(9,82%,30%));
+
+$shadow-card: 0 0 4px 0 rgb(0 0 0 / 10%);
+$shadow-card-hover: 10px 10px 20px 0 rgb(0 0 0 / 10%); 
