@@ -10,7 +10,11 @@
     justify-content: center;
     &__content{
         width: 500px;
-        background-color: #fff;        
+        background-color: #fff; 
+        position: relative;       
+    }
+    &__around{
+        border-radius: 1rem;
     }
     &__header, &__footer{
         padding: 10px;
@@ -19,8 +23,24 @@
         margin: 0;
     }
     &__body{
-        padding: 10px;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
+        padding: 10px;        
+    }
+    &__button{
+        color: white;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+    &__close{
+        background-color: black;
+        border-radius: 100%;
+        position: absolute;
+        top: -12.5px;
+        right: -12.5px;
+        display: block;
+        width: 30px;
+        height: 30px;
+
     }
 }

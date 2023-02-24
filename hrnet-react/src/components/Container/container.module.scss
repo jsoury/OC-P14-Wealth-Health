@@ -1,0 +1,18 @@
+@use "@/assets/styles/libs/mixin" as mixin;
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    @include mixin.break-to(large) {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    @include mixin.break-to(medium) {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    @include mixin.break-to(small) {
+        max-width: 720px;
+        margin: 0 1rem;
+    }
+}

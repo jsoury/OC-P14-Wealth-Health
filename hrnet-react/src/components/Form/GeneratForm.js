@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Form,
-  TextField,
-  SelectField,
-  SubmitButton,
-  NumberField,
-  DateField,
-  ResetButton,
-} from './FormElements'
+import { Form, SubmitButton, ResetButton } from './FormElements'
 import * as Yup from 'yup'
 
 const GeneratForm = ({ formSchema, className, submit, children }) => {
@@ -76,11 +68,6 @@ const GeneratForm = ({ formSchema, className, submit, children }) => {
     }
   }
 
-  // const onSubmit = (values, { setSubmitting, resetForm, setStatus }) => {
-  //   console.log(values)
-  //   setSubmitting(false)
-  // }
-
   return (
     <div>
       <Form
@@ -89,7 +76,6 @@ const GeneratForm = ({ formSchema, className, submit, children }) => {
         initialValues={formData}
         validationSchema={validationSchema}
         onSubmit={submit}
-        //children={children}
       >
         {children}
         <SubmitButton title="Submit" />
