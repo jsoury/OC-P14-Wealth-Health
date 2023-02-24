@@ -1,0 +1,6 @@
+@use "@/assets/styles/libs/mixin" as mixin;
+
+.home{
+    margin-top: 5rem;
+    @include mixin.grid-card-responsive(2)
+}

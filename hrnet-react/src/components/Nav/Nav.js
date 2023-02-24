@@ -8,8 +8,8 @@ const Nav = () => {
     <nav className={style.nav}>
       <Link to="" className={style.nav__logo}>
         <img src={logo} alt="logo wealth health"></img>
-        <h1 className="sr-only">Wealth Health HR-Net</h1>
       </Link>
+      <h1 className="sr-only">Wealth Health HR-Net</h1>
       <div>
         <Link to="/employee/create" className={style.nav__item}>
           create employee

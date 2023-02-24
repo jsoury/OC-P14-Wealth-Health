@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { TextField, SelectField, NumberField, DateField } from '../../components/Form/FormElements'
 import GeneratForm from '@/components/Form/GeneratForm'
 import createEmployeeModel from '@/data/modelCreateUser.json'
 import styles from '../../components/Form/form.module.scss'
 import * as userActions from '../../features/users'
 import { useDispatch } from 'react-redux'
-import Modal from '../../components/Modal'
+import { Modal } from 'jsoury-modal'
+//import Modal from '../../components/Modal/Modal'
 
 const formSchema = createEmployeeModel.formSchema
 
 const CreateEmployee = () => {
   const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(false)
+
   const getFormElement = (elementName, elementSchema) => {
     const props = {
       name: elementName,
@@ -34,12 +36,12 @@ const CreateEmployee = () => {
       return <SelectField {...props} />
     }
   }
-  const onSubmit = (values, { setSubmitting }) => {
-    console.log('submit')
-    console.log(values)
+
+  const onSubmit = (values, { setSubmitting, resetForm }) => {
     dispatch(userActions.addUser(values))
     setSubmitting(false)
     setShowModal(true)
+    resetForm({})
   }
   return (
     <div className={styles.createEmployee}>
@@ -63,8 +65,8 @@ const CreateEmployee = () => {
           }
         })}
       </GeneratForm>
-      <Modal title="modal title" show={showModal} onClose={() => setShowModal(false)}>
-        body
+      <Modal around show={showModal} onClose={() => setShowModal(false)}>
+        Employee Created!
       </Modal>
     </div>
   )
